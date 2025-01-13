@@ -93,14 +93,14 @@ public class IcicleStaffListener implements Listener {
                     cooldownMap.put(player, true);
                     Bukkit.getScheduler().runTaskLater(plugin, () -> cooldownMap.put(player, false), 6); // 6 ticks = 0.3 seconds
                 } else {
-                    player.sendMessage("You need ice blocks to use the Icicle Staff!");
+                    player.sendMessage("你需要有冰!");
                 }
             }
         }
     }
 
     private boolean isValidIcicleStaff(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("Don't freeze me pls");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("请不要冰住我");
     }
 
     private boolean hasIceAmmo(Player player) {

@@ -99,16 +99,16 @@ public class CrystalSniperListener implements Listener {
                 // Set cooldown
                 cooldowns.put(player, System.currentTimeMillis());
             } else {
-                player.sendMessage("You need crystals to use the Crystal Sniper!");
+                player.sendMessage("你需要水晶!");
             }
         } else {
             long timeLeft = (cooldowns.get(player) + COOLDOWN_TIME - System.currentTimeMillis()) / 1000;
-            player.sendMessage("Crystal Sniper is on cooldown. Time left: " + timeLeft + " seconds.");
+            player.sendMessage("水晶狙击枪正在冷却。 剩余: " + timeLeft + " 秒");
         }
     }
 
     private boolean isValidCrystalSniper(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("This ain't Pixel Gun!");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("这不是像素枪!");
     }
 
     private boolean hasCrystalAmmo(Player player) {
@@ -129,22 +129,22 @@ public class CrystalSniperListener implements Listener {
         List<String> lore = meta.getLore();
         String displayName = ChatColor.stripColor(meta.getDisplayName()); // Get the stripped display name
 
-        // Check if the lore contains "It's shining" and if the display name contains specific crystal names
-        return lore != null && lore.contains("It's shining") && (
-                displayName.contains("Jade Crystal") ||
-                        displayName.contains("Moonstone Crystal") ||
-                        displayName.contains("Onyx Crystal") ||
-                        displayName.contains("Rhodonite Crystal") ||
-                        displayName.contains("Amethyst Crystal") ||
-                        displayName.contains("Tanzanite Crystal") ||
-                        displayName.contains("Sapphire Crystal") ||
-                        displayName.contains("Kyanite Crystal") ||
-                        displayName.contains("Turquoise Crystal") ||
-                        displayName.contains("Emerald Crystal") ||
-                        displayName.contains("Peridot Crystal") ||
-                        displayName.contains("Topaz Crystal") ||
-                        displayName.contains("Citrine Crystal") ||
-                        displayName.contains("Garnet Crystal")
+        // Check if the lore contains "它在闪闪发光" and if the display name contains specific crystal names
+        return lore != null && lore.contains("它在闪闪发光") && (
+                displayName.contains("玉水晶") ||
+                        displayName.contains("月光石水晶") ||
+                        displayName.contains("缟玛瑙水晶") ||
+                        displayName.contains("蔷薇辉石水晶") ||
+                        displayName.contains("纯紫水晶") ||
+                        displayName.contains("坦桑石水晶") ||
+                        displayName.contains("蓝宝石水晶") ||
+                        displayName.contains("蓝晶石水晶") ||
+                        displayName.contains("绿松石水晶") ||
+                        displayName.contains("祖母绿水晶") ||
+                        displayName.contains("橄榄石水晶") ||
+                        displayName.contains("黄玉水晶") ||
+                        displayName.contains("纯黄水晶") ||
+                        displayName.contains("石榴石水晶")
         );
     }
 

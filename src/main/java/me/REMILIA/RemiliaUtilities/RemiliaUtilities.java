@@ -42,11 +42,11 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         //----------HELLO WORLD!----------//
 
         getLogger().info("♥-----------------------♥");
-        getLogger().info("|  Remilia's Utilities  |");
-        getLogger().info("| Made by KakuzatouRemi |");
-        getLogger().info("|                       |");
-        getLogger().info("|    I'm not a demon,   |");
-        getLogger().info("|      I'm a fairy      |");
+        getLogger().info("|       雷米工具          |");
+        getLogger().info("| 由KakuzatouRemi制作     |");
+        getLogger().info("|                        |");
+        getLogger().info("|     我不是恶魔，        |");
+        getLogger().info("|      我是仙女          |");
         getLogger().info("♥-----------------------♥");
 
         //----------CATEGORIES BELOW----------//
@@ -54,37 +54,37 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         // Define the main category group
         final NestedItemGroup RU = new NestedItemGroup(
                 new NamespacedKey(this, "RU"), // Key for the group
-                new CustomItemStack(Material.JIGSAW, "&5Remilia's Utilities") // Item representing the group
+                new CustomItemStack(Material.JIGSAW, "&5雷米工具") // Item representing the group
         );
         // Define a sub-category group, belonging to the main category RU
         final SubItemGroup RU_INFO = new SubItemGroup(
                 new NamespacedKey(this, "RU_INFO"), // Key for the sub-group
                 RU, // Parent group (RU)
-                new CustomItemStack(Material.LEGACY_BOOK_AND_QUILL, "&bInfo") // Item representing the sub-group
+                new CustomItemStack(Material.LEGACY_BOOK_AND_QUILL, "&b信息") // Item representing the sub-group
         );
         // Define a sub-category group, belonging to the main category RU
         final SubItemGroup RU_MATERIALS = new SubItemGroup(
                 new NamespacedKey(this, "RU_RES"), // Key for the sub-group
                 RU, // Parent group (RU)
-                new CustomItemStack(Material.END_CRYSTAL, "&bMaterials") // Item representing the sub-group
+                new CustomItemStack(Material.END_CRYSTAL, "&b材料") // Item representing the sub-group
         );
         // Define a sub-category group, belonging to the main category RU
         final SubItemGroup RU_GEMS = new SubItemGroup(
                 new NamespacedKey(this, "RU_GEMS"), // Key for the sub-group
                 RU, // Parent group (RU)
-                new CustomItemStack(Material.AMETHYST_SHARD, "&bGems") // Item representing the sub-group
+                new CustomItemStack(Material.AMETHYST_SHARD, "&b宝石") // Item representing the sub-group
         );
         // Define another sub-category group, belonging to the main category RU
         final SubItemGroup RU_TOOLS = new SubItemGroup(
                 new NamespacedKey(this, "RU_TOOLS"), // Key for the sub-group
                 RU, // Parent group (RU)
-                new CustomItemStack(Material.DIAMOND_SWORD, "&6Tools") // Item representing the sub-group
+                new CustomItemStack(Material.DIAMOND_SWORD, "&6工具") // Item representing the sub-group
         );
         // Define another sub-category group, belonging to the main category RU
         final SubItemGroup RU_PANELS = new SubItemGroup(
                 new NamespacedKey(this, "RU_PANELS"), // Key for the sub-group
                 RU, // Parent group (RU)
-                new CustomItemStack(Material.DAYLIGHT_DETECTOR, "&bPanels") // Item representing the sub-group
+                new CustomItemStack(Material.DAYLIGHT_DETECTOR, "&b太阳能发电机") // Item representing the sub-group
         );
         /* UNUSED YET
         // Define the Enchants subgroup
@@ -108,10 +108,10 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Note = new SlimefunItemStack(
                 "NOTE", // Item ID
                 Material.PAPER, // Material
-                "&6Note", // Display name
-                "&7Needs a lot of grinding", "",
-                "&6Gems can be obtained by mining:",
-                "&6Stone & Deepslate"// Multiline BSlore
+                "&6信息", // 显示名称
+                "&7宝石是必不可少的材料", "",
+                "&6可以通过挖掘获得:",
+                "&6石头 & 深板岩"// 多行描述
         );
         ItemStack[] NoteRecipe = {null, null, null, null, null, null, null, null, null};
         SlimefunItem NoteItem = new SlimefunItem(RU_INFO, Note, RecipeType.NULL, NoteRecipe);
@@ -119,14 +119,14 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //----------ITEMS BELOW----------//
 
-        SlimefunItemStack Binder = new SlimefunItemStack("BINDER", Material.SLIME_BALL, "&eBinder", "&bSticky");
+        SlimefunItemStack Binder = new SlimefunItemStack("BINDER", Material.SLIME_BALL, "&e粘合剂", "&b真的很黏");
         ItemStack[] binderRecipe = {new ItemStack(Material.SLIME_BLOCK, 8), null, null, null, null, null, null, null, null};
         SlimefunItem BinderItem = new SlimefunItem(RU_MATERIALS, Binder, RecipeType.COMPRESSOR, binderRecipe);
         BinderItem.register(this);
 
         //HEHE//
 
-        SlimefunItemStack Crossguard = new SlimefunItemStack("CROSSGUARD", Material.IRON_INGOT, "&bCrossguard", "&cIt cares about you");
+        SlimefunItemStack Crossguard = new SlimefunItemStack("CROSSGUARD", Material.IRON_INGOT, "&b护手", "&c它关心你");
         ItemStack[] crossguardRecipe = {
                 null, null, null,
                 new ItemStack(SlimefunItems.DAMASCUS_STEEL_INGOT), new ItemStack(SlimefunItems.DAMASCUS_STEEL_INGOT), new ItemStack(SlimefunItems.DAMASCUS_STEEL_INGOT),
@@ -137,7 +137,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ReinforcedHandle = new SlimefunItemStack("REINFORCED_HANDLE", Material.BLAZE_ROD, "&cReinforced Handle", "&cNot meant for doors");
+        SlimefunItemStack ReinforcedHandle = new SlimefunItemStack("REINFORCED_HANDLE", Material.BLAZE_ROD, "&c强化把手", "&c并不适用于门");
         ItemStack[] reinforcedHandleRecipe = {
                 new ItemStack(SlimefunItems.COMPRESSED_CARBON), null, new ItemStack(SlimefunItems.COMPRESSED_CARBON),
                 Crossguard, Binder, Crossguard,
@@ -148,7 +148,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack EnderEye = new SlimefunItemStack("ENDER_EYE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFhOGZjOGRlNjQxN2I0OGQ0OGM4MGI0NDNjZjUzMjZlM2Q5ZGE0ZGJlOWIyNWZjZDQ5NTQ5ZDk2MTY4ZmMwIn19fQ==", "&2Ender Eye", "&7Don't look at it");
+        SlimefunItemStack EnderEye = new SlimefunItemStack("ENDER_EYE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFhOGZjOGRlNjQxN2I0OGQ0OGM4MGI0NDNjZjUzMjZlM2Q5ZGE0ZGJlOWIyNWZjZDQ5NTQ5ZDk2MTY4ZmMwIn19fQ==", "&2末影之眼", "&7不要看它");
         ItemStack[] EnderEyerecipe = {new ItemStack(Material.ENDER_EYE, 16), null, null, null, null, null, null, null, null};
         SlimefunItem EnderEyeitem = new SlimefunItem(RU_MATERIALS, EnderEye, RecipeType.COMPRESSOR, EnderEyerecipe);
         EnderEyeitem.register(this);
@@ -158,8 +158,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack FlattenedPearl = new SlimefunItemStack(
                 "FLATTENED_PEARL",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjdlNmFkNGI3OGJkMzUxODdhNjU3MDg5OTE4MTdlMjY2OTlmOTAyYzc3MzhjODFjMzc1ODU5ZDcyNzUzOSJ9fX0=",
-                "&aFlattened Pearl",
-                "&7So flat..."
+                "&a扁平珍珠",
+                "&7太扁了..."
         );
         ItemStack[] FlattenedPearlRecipe = {new ItemStack(Material.ENDER_PEARL, 16), null, null, null, null, null, null, null, null};
         SlimefunItem FlattenedPearlItem = new SlimefunItem(RU_MATERIALS, FlattenedPearl, RecipeType.COMPRESSOR, FlattenedPearlRecipe);
@@ -167,7 +167,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack UnstablePearl = new SlimefunItemStack("UNSTABLE_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRkNDhhYzdlNjViOTE0Njc5MDRmMmY0ZDE1NDU1Njc3NmZmYTljZDJkNTI2YjEyYTA0OTliYjU5Y2M2NTZjNyJ9fX0=", "&aUnstable Pearl", "&7It won't hurt you... Probably");
+        SlimefunItemStack UnstablePearl = new SlimefunItemStack("UNSTABLE_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRkNDhhYzdlNjViOTE0Njc5MDRmMmY0ZDE1NDU1Njc3NmZmYTljZDJkNTI2YjEyYTA0OTliYjU5Y2M2NTZjNyJ9fX0=", "&a不稳定的珍珠", "&7它可能不会伤害你...大概");
         ItemStack[] UnstablePearlrecipe = {
                 FlattenedPearl, FlattenedPearl, FlattenedPearl,
                 FlattenedPearl, FlattenedPearl, FlattenedPearl,
@@ -178,7 +178,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack StablePearl = new SlimefunItemStack("STABLE_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWNiN2MyMWNjNDNkYzE3Njc4ZWU2ZjE2NTkxZmZhYWIxZjYzN2MzN2Y0ZjZiYmQ4Y2VhNDk3NDUxZDc2ZGI2ZCJ9fX0=", "&aStable Pearl", "&7It won't hurt you");
+        SlimefunItemStack StablePearl = new SlimefunItemStack("STABLE_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWNiN2MyMWNjNDNkYzE3Njc4ZWU2ZjE2NTkxZmZhYWIxZjYzN2MzN2Y0ZjZiYmQ4Y2VhNDk3NDUxZDc2ZGI2ZCJ9fX0=", "&a稳定的珍珠", "&7它不会伤害你");
         ItemStack[] StablePearlrecipe = {
                 UnstablePearl, UnstablePearl, UnstablePearl,
                 UnstablePearl, EnderEye, UnstablePearl,
@@ -189,7 +189,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack HeavyPearl = new SlimefunItemStack("HEAVY_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRiZDRlNWQzZDljMDVhMDM2ZmI2MmU2ZTcwZmFmOWU2Zjk4ZDI5NGY5ZDAwNjc4MWMxNDRjOWYxNWI4NzcxNSJ9fX0=", "&bHeavy Pearl", "&7A pearl of substantial weight");
+        SlimefunItemStack HeavyPearl = new SlimefunItemStack("HEAVY_PEARL", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRiZDRlNWQzZDljMDVhMDM2ZmI2MmU2ZTcwZmFmOWU2Zjk4ZDI5NGY5ZDAwNjc4MWMxNDRjOWYxNWI4NzcxNSJ9fX0=", "&b致密珍珠", "&7相当有分量的珍珠");
         ItemStack[] HeavyPearlrecipe = {
                 null, StablePearl, null,
                 StablePearl, EnderEye, StablePearl,
@@ -203,8 +203,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack CompressedIce = new SlimefunItemStack(
                 "COMPRESSED_ICE",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE4M2QxYWFjMDY2ZGZkN2Q2NjhhZjFmNmIyZTUyMDE1MmFlYmI2MjQ1MjRhMGY5OWQ1MDkzNWJhM2Q0ZTIyYSJ9fX0=",
-                "&bCompressed Ice",
-                "&bGot headache?"
+                "&b压缩冰",
+                "&b会头痛吗?"
         );
         ItemStack[] CompressedIceRecipe = new ItemStack[]{
                 new ItemStack(Material.PACKED_ICE, 64), null, null, null, null, null, null, null, null};
@@ -213,7 +213,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack CondensedIce = new SlimefunItemStack("CONDENSED_ICE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjZlNDI5YzYwOTMyZWJjMzY2ZTc5MWE0MmUxODZhZjg4OGRlMDhlNWQ4ZWI4YWM2ZjViNmY0ZDQ0MGRiNDg2YyJ9fX0=", "&bCondensed Ice", "&bMight cause frostbites");
+        SlimefunItemStack CondensedIce = new SlimefunItemStack("CONDENSED_ICE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjZlNDI5YzYwOTMyZWJjMzY2ZTc5MWE0MmUxODZhZjg4OGRlMDhlNWQ4ZWI4YWM2ZjViNmY0ZDQ0MGRiNDg2YyJ9fX0=", "&b浓缩冰", "&b可能会导致冻伤");
         ItemStack[] CondensedIceRecipe = new ItemStack[]{
                 CompressedIce, CompressedIce, CompressedIce, CompressedIce, CompressedIce, CompressedIce, CompressedIce, CompressedIce, CompressedIce};
         SlimefunItem CondensedIceItem = new SlimefunItem(RU_MATERIALS, CondensedIce, RecipeType.ENHANCED_CRAFTING_TABLE, CondensedIceRecipe);
@@ -221,7 +221,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ConsolidatedIce = new SlimefunItemStack("CONSOLIDATED_ICE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFmNzcyZjBlMGE5NGM4NGIyNjgyNmQxNWVjNGNlMzljMDEzZDVmM2ViMGZjOGMxODY4MDA4YzdiNzRjZDAwNSJ9fX0=", "&bConsolidated Ice", "&bCauses frostbites");
+        SlimefunItemStack ConsolidatedIce = new SlimefunItemStack("CONSOLIDATED_ICE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFmNzcyZjBlMGE5NGM4NGIyNjgyNmQxNWVjNGNlMzljMDEzZDVmM2ViMGZjOGMxODY4MDA4YzdiNzRjZDAwNSJ9fX0=", "&b固化冰", "&b会导致冻伤");
         ItemStack[] ConsolidatedIceRecipe = new ItemStack[]{
                 CondensedIce, CondensedIce, null, CondensedIce, CondensedIce, null, null, null, null};
         SlimefunItem ConsolidatedIceItem = new SlimefunItem(RU_MATERIALS, ConsolidatedIce, RecipeType.ENHANCED_CRAFTING_TABLE, ConsolidatedIceRecipe);
@@ -229,7 +229,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack IceAccelerator = new SlimefunItemStack("ICE_ACCELERATOR", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk0MzY3NjNlZTcwNGRlZjFiYzZlODk0ZDFmODUzNTE0MWI0OWM5NTk5NWJhYzU3NjRmMTYzNWM2ZDBkMTEzNiJ9fX0=", "&bIce Accelerator", "&7Don't put anything in there");
+        SlimefunItemStack IceAccelerator = new SlimefunItemStack("ICE_ACCELERATOR", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk0MzY3NjNlZTcwNGRlZjFiYzZlODk0ZDFmODUzNTE0MWI0OWM5NTk5NWJhYzU3NjRmMTYzNWM2ZDBkMTEzNiJ9fX0=", "&b冰加速器", "&7不要放任何东西进去");
         ItemStack[] IceAcceleratorRecipe = {
                 CondensedIce, null, CondensedIce,
                 CondensedIce, null, CondensedIce,
@@ -240,7 +240,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ConcentratedExplosives = new SlimefunItemStack("CONCENTRATED_EXPLOSIVES", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ3YmRmMzJmNDI3YjhkZjBhNGNjMWVlYWMzNGQ5NTc1NjAzNWQ0YjM1MWU3NWZiMTE4NzYxZWYwMjA0YzQwZiJ9fX0=", "&6Concentrated Explosives", "&7No smoking!");
+        SlimefunItemStack ConcentratedExplosives = new SlimefunItemStack("CONCENTRATED_EXPLOSIVES", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ3YmRmMzJmNDI3YjhkZjBhNGNjMWVlYWMzNGQ5NTc1NjAzNWQ0YjM1MWU3NWZiMTE4NzYxZWYwMjA0YzQwZiJ9fX0=", "&6浓缩炸药", "&7禁止吸烟！");
         ItemStack[] ConcentratedExplosivesRecipe = {
                 new ItemStack(Material.TNT), new ItemStack(Material.END_CRYSTAL), new ItemStack(Material.TNT),
                 new ItemStack(Material.FIRE_CHARGE), new ItemStack(Material.RESPAWN_ANCHOR), new ItemStack(Material.FIRE_CHARGE),
@@ -251,7 +251,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack APHE = new SlimefunItemStack("APHE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTRmOWRkMzkwNzAxODY0MWJkYjEwNWI5NjQ3YzA4MjI3OTYyZjEwNjUwMmE2ODI5YWRkNGI5MDhmNzQyYTgzNyJ9fX0=", "&6APHE", "&7Armor-Piercing High Explosive");
+        SlimefunItemStack APHE = new SlimefunItemStack("APHE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTRmOWRkMzkwNzAxODY0MWJkYjEwNWI5NjQ3YzA4MjI3OTYyZjEwNjUwMmE2ODI5YWRkNGI5MDhmNzQyYTgzNyJ9fX0=", "&6穿甲高爆弹", "&7穿甲高爆");
         ItemStack[] APHERecipe = {
                 new ItemStack(SlimefunItems.STEEL_INGOT), new ItemStack(SlimefunItems.STEEL_INGOT), new ItemStack(SlimefunItems.STEEL_INGOT),
                 new ItemStack(SlimefunItems.STEEL_INGOT), ConcentratedExplosives, new ItemStack(SlimefunItems.STEEL_INGOT),
@@ -262,7 +262,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack DenseObsidian = new SlimefunItemStack("DENSE_OBSIDIAN", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdjZjkyZTQxYWI5YmIzNmNkMjI4MDU5ZmM0ZWE2N2FlMmY1MTcxNzI2NTUyNDY2ODU3MDgxNTc3MTRlZWMxZSJ9fX0=", "&7Dense Obsidian", "&7Heavy AF");
+        SlimefunItemStack DenseObsidian = new SlimefunItemStack("DENSE_OBSIDIAN", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdjZjkyZTQxYWI5YmIzNmNkMjI4MDU5ZmM0ZWE2N2FlMmY1MTcxNzI2NTUyNDY2ODU3MDgxNTc3MTRlZWMxZSJ9fX0=", "&7致密黑曜石", "&7非常重");
         ItemStack[] DenseObsidianRecipe = {
                 new SlimefunItemStack(SlimefunItems.WITHER_PROOF_OBSIDIAN,8), null, null,
                 null,null,null,
@@ -273,7 +273,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ActivatedObsidian = new SlimefunItemStack("ACTIVATED_OBSIDIAN", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2FkZTc2ZjVkNTkxNjMyZDkzMjRhYjk5ZDc0NzI1MWNhMzc0N2UwNGNhZjQxZDAzNzBmODUwZjllYzg3YTEzZCJ9fX0=", "&4Activated Obsidian", "&7Much heavier than before");
+        SlimefunItemStack ActivatedObsidian = new SlimefunItemStack("ACTIVATED_OBSIDIAN", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2FkZTc2ZjVkNTkxNjMyZDkzMjRhYjk5ZDc0NzI1MWNhMzc0N2UwNGNhZjQxZDAzNzBmODUwZjllYzg3YTEzZCJ9fX0=", "&4激化黑曜石", "&7比以前重得多");
         ItemStack[] ActivatedObsidianRecipe = {
                 DenseObsidian, DenseObsidian, DenseObsidian,
                 DenseObsidian, new ItemStack(Material.REDSTONE_BLOCK), DenseObsidian,
@@ -284,7 +284,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack LinearAccelerator = new SlimefunItemStack("LINEAR_ACCELERATOR", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWE0Nzg0Njk0MGFmOGFhZDIwNzM5MTg1MmFhMDI3N2EyZWUxMTY3OWZhMmMyODZlZjA2Mjc3NjU1ZjU0YTE1OCJ9fX0=", "&bLinear Accelerator", "&7Capable of handling high amounts of energy");
+        SlimefunItemStack LinearAccelerator = new SlimefunItemStack("LINEAR_ACCELERATOR", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWE0Nzg0Njk0MGFmOGFhZDIwNzM5MTg1MmFhMDI3N2EyZWUxMTY3OWZhMmMyODZlZjA2Mjc3NjU1ZjU0YTE1OCJ9fX0=", "&b线性加速器", "&7能够处理大量的能量");
         ItemStack[] LinearAcceleratorRecipe = {
                 IceAccelerator, IceAccelerator, IceAccelerator,
                 IceAccelerator, new ItemStack(Material.TINTED_GLASS), IceAccelerator,
@@ -295,7 +295,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack LauncherTube = new SlimefunItemStack("LAUNCHER_TUBE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJjZmQyMmZiMWFhN2JkN2VmNGY4NmRhMGM4OTIxZTc2MGY4NDg4ODcwZGRkYmM0MGY2Mjc3NTBjMTE4ZTE3NiJ9fX0=", "&3Launcher Tube", "&7You put the missile here");
+        SlimefunItemStack LauncherTube = new SlimefunItemStack("LAUNCHER_TUBE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJjZmQyMmZiMWFhN2JkN2VmNGY4NmRhMGM4OTIxZTc2MGY4NDg4ODcwZGRkYmM0MGY2Mjc3NTBjMTE4ZTE3NiJ9fX0=", "&3发射管", "&7你需要把导弹放在这里");
         ItemStack[] LauncherTubeRecipe = {
                 new ItemStack(SlimefunItems.REINFORCED_PLATE), new ItemStack(SlimefunItems.REINFORCED_PLATE), new ItemStack(SlimefunItems.REINFORCED_PLATE),
                 null, null, null,
@@ -313,7 +313,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         SlimefunItemStack PowerCore = new SlimefunItemStack("POWER_CORE",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWIxMGVkOTQwODBhMDc1NDZhMjQ1ZWM4MzdjZmM1ODE0Yzc2NThjN2VmMzM3YmUwMzVhMTFiMmUxZTAzYmExNiJ9fX0=",
-                "&8Power Core", "&cBetter than lithium-ion batteries");
+                "&8动力核心", "&c比锂离子电池更好");
         ItemStack[] powerCoreRecipe = {
                 new ItemStack(Material.CRYING_OBSIDIAN), new ItemStack(Material.BEACON), new ItemStack(Material.CRYING_OBSIDIAN),
                 new ItemStack(Material.BEACON), new ItemStack(Material.RESPAWN_ANCHOR), new ItemStack(Material.BEACON),
@@ -323,7 +323,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack TeleportationCore = new SlimefunItemStack("TELEPORTATION_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGVjMWMzZjdkMDljZTZjMGNiNDhlZDMwYjQ1OTZhNWMxNGZhZTc5ZGVmOGJmZDE0YTU5ZmMxOTM1NjAwYmM3YiJ9fX0=", "&bTeleportation Core", "&7It's pulsing");
+        SlimefunItemStack TeleportationCore = new SlimefunItemStack("TELEPORTATION_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGVjMWMzZjdkMDljZTZjMGNiNDhlZDMwYjQ1OTZhNWMxNGZhZTc5ZGVmOGJmZDE0YTU5ZmMxOTM1NjAwYmM3YiJ9fX0=", "&b传送核心", "&7它在跳动");
         ItemStack[] teleportationCoreRecipe = {
                 StablePearl, StablePearl, StablePearl,
                 StablePearl, PowerCore, StablePearl,
@@ -334,7 +334,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack IceCore = new SlimefunItemStack("ICE_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFiNWY2OWUxOTAxMDE5NGExOWNhZjE4NDM3YzdjYTcxMjIxZTQxM2FhMDg5ZWFmYTQ3YjliZGQ5Zjk5ZGQ4NSJ9fX0=", "&bIce Core", "&bDon't mistake for a portable AC");
+        SlimefunItemStack IceCore = new SlimefunItemStack("ICE_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFiNWY2OWUxOTAxMDE5NGExOWNhZjE4NDM3YzdjYTcxMjIxZTQxM2FhMDg5ZWFmYTQ3YjliZGQ5Zjk5ZGQ4NSJ9fX0=", "&b寒冰核心", "&b不要误认为是便携式交流电");
         ItemStack[] IceCoreRecipe = new ItemStack[]{
                 ConsolidatedIce, ConsolidatedIce, ConsolidatedIce,
                 ConsolidatedIce, PowerCore, ConsolidatedIce,
@@ -345,7 +345,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ExplosiveCore = new SlimefunItemStack("EXPLOSIVE_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJiMjhiYjBiZjFhZDIxN2QyYTgxMTkxZWZmY2M2OWZlMTc0NzE0YTQzMmZkNzFmYTYwYWE1MGYzNzEyYjk3In19fQ==", "&cExplosive Core", "&cDon't stick a screwdriver!");
+        SlimefunItemStack ExplosiveCore = new SlimefunItemStack("EXPLOSIVE_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJiMjhiYjBiZjFhZDIxN2QyYTgxMTkxZWZmY2M2OWZlMTc0NzE0YTQzMmZkNzFmYTYwYWE1MGYzNzEyYjk3In19fQ==", "&c爆炸核心", "&c不要用螺丝刀折腾它!");
         ItemStack[] ExplosiveCoreRecipe = {
                 APHE, APHE, APHE,
                 APHE, PowerCore, APHE,
@@ -356,7 +356,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack ProtectionCore = new SlimefunItemStack("PROTECTION_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFjMGU2OWYyY2RiNTQyNmFhZWQ3MTFjZTAzZWE2ZDcwOWM5MmU5YmViODRhZDFkMjJiNTg0YzQ2MWQ1MzM1ZCJ9fX0=", "&bProtection Core", "&cCan't lift bro?");
+        SlimefunItemStack ProtectionCore = new SlimefunItemStack("PROTECTION_CORE", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFjMGU2OWYyY2RiNTQyNmFhZWQ3MTFjZTAzZWE2ZDcwOWM5MmU5YmViODRhZDFkMjJiNTg0YzQ2MWQ1MzM1ZCJ9fX0=", "&b保护核心", "&c别丢弃它");
         ItemStack[] ProtectionCoreRecipe = {
                 ActivatedObsidian, ActivatedObsidian, ActivatedObsidian,
                 ActivatedObsidian, PowerCore, ActivatedObsidian,
@@ -367,7 +367,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack LapisCrystal = new SlimefunItemStack("LAPIS_CRYSTAL", "db9ffd85bf0283a588706e3d27afb9d4917e06f2ba717c1aea68dc79393b91f4", "&9Lapis Crystal", new String[]{"&9Crystallized Lapis Lazuli"});
+        SlimefunItemStack LapisCrystal = new SlimefunItemStack("LAPIS_CRYSTAL", "db9ffd85bf0283a588706e3d27afb9d4917e06f2ba717c1aea68dc79393b91f4", "&9青金石水晶", new String[]{"&9结晶青金石"});
         ItemStack[] LapisCrystalRecipe = new ItemStack[]{
                 new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.LAPIS_BLOCK),
                 new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.GLASS_PANE), new ItemStack(Material.LAPIS_BLOCK),
@@ -378,7 +378,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack RedstoneCrystal = new SlimefunItemStack("REDSTONE_CRYSTAL", "f6257c06896cee4dd58f63dc77c0b514294ea0bc22bed78c061cf13d2d714536", "&cRedstone Crystal", new String[]{"&cCrystallized Redstone"});
+        SlimefunItemStack RedstoneCrystal = new SlimefunItemStack("REDSTONE_CRYSTAL", "f6257c06896cee4dd58f63dc77c0b514294ea0bc22bed78c061cf13d2d714536", "&c红石水晶", new String[]{"&c结晶红石"});
         ItemStack[] RedstoneCrystalRecipe = new ItemStack[]{
                 new ItemStack(Material.REDSTONE_BLOCK), new ItemStack(Material.REDSTONE_BLOCK), new ItemStack(Material.REDSTONE_BLOCK),
                 new ItemStack(Material.REDSTONE_BLOCK), new ItemStack(Material.GLASS_PANE), new ItemStack(Material.REDSTONE_BLOCK),
@@ -389,7 +389,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack MagicalContainer = new SlimefunItemStack("MAGICAL_CONTAINER", "b91b7b21725f146d29c192b745d79d22603267c7ad893badeb6546e746600060", "&6Magical Container", new String[]{"&7Magical Storage"});
+        SlimefunItemStack MagicalContainer = new SlimefunItemStack("MAGICAL_CONTAINER", "b91b7b21725f146d29c192b745d79d22603267c7ad893badeb6546e746600060", "&6魔法容器", new String[]{"&7魔法储存"});
         ItemStack[] MagicalContainerRecipe = new ItemStack[]{
                 LapisCrystal, RedstoneCrystal, LapisCrystal,
                 RedstoneCrystal, new ItemStack(Material.GLASS), RedstoneCrystal,
@@ -406,8 +406,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack LilacBundle = new SlimefunItemStack(
                 "LILAC_BUNDLE",
                 Material.MAGENTA_DYE,
-                "&5Lilac Bundle",
-                new String[]{"&5Bundled Lilac"}
+                "&5丁香束",
+                new String[]{"&5捆绑的丁香"}
         );
         ItemStack[] LilacBundleRecipe = new ItemStack[]{
                 new ItemStack(Material.LILAC, 64), null, null, null, null, null, null, null, null
@@ -420,8 +420,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack SunflowerBundle = new SlimefunItemStack(
                 "SUNFLOWER_BUNDLE",
                 Material.YELLOW_DYE,
-                "&eSunflower Bundle",
-                new String[]{"&eBundled Sunflower"}
+                "&e向日葵束",
+                new String[]{"&e捆绑的向日葵"}
         );
         ItemStack[] SunflowerBundleRecipe = new ItemStack[]{
                 new ItemStack(Material.SUNFLOWER, 64), null, null, null, null, null, null, null, null
@@ -434,8 +434,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack PeonyBundle = new SlimefunItemStack(
                 "PEONY_BUNDLE",
                 Material.PINK_DYE,
-                "&dPeony Bundle",
-                new String[]{"&dBundled Peony"}
+                "&d牡丹束",
+                new String[]{"&d捆绑的牡丹"}
         );
         ItemStack[] PeonyBundleRecipe = new ItemStack[]{
                 new ItemStack(Material.PEONY, 64), null, null, null, null, null, null, null, null
@@ -448,8 +448,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack RoseBundle = new SlimefunItemStack(
                 "ROSE_BUNDLE",
                 Material.RED_DYE,
-                "&4Rose Bundle",
-                new String[]{"&4Bundled Rose"}
+                "&4玫瑰束",
+                new String[]{"&4捆绑的玫瑰"}
         );
         ItemStack[] RoseBundleRecipe = new ItemStack[]{
                 new ItemStack(Material.ROSE_BUSH, 64), null, null, null, null, null, null, null, null
@@ -465,9 +465,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Jade = new SlimefunItemStack(
                 "JADE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM0ZjAwZWNiOTY3NzAyODBjOGQ2NTNjMTg5MGU4N2FiNWIxMjVmODUyOGU3YWQ0ZmVjMWQzMWViZDEyMjg3YiJ9fX0=", // Material (example, change as needed)
-                "&aJade", // Display name
-                "&7A beautiful green gemstone", // Description
-                "&7Found deep in the earth" // Additional lore
+                "&a玉", // Display name
+                "&7一颗漂亮的绿色宝石", // Description
+                "&7可在地球深处发现" // Additional lore
         );
         ItemStack[] jadeRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem jadeItem = new SlimefunItem(RU_GEMS, Jade, RecipeType.NULL, jadeRecipe);
@@ -475,9 +475,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Moonstone = new SlimefunItemStack(
                 "MOONSTONE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWQ5M2VkOTJiMWE5YTI0YWQwNzJhY2Y2ZThmY2NmY2VkZTFiOGMyNzEzNmEyYjQyNTc2ZWU4NWRmN2RjMTE0YiJ9fX0=", // Material (example, change as needed)
-                "&7Moonstone", // Display name
-                "&fA mystical gemstone from the moon", // Description
-                "&7Said to possess magical properties" // Additional lore
+                "&7月光石", // Display name
+                "&f来自月球的神秘宝石", // Description
+                "&7据说拥有神奇的特性" // Additional lore
         );
         ItemStack[] moonstoneRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem moonstoneItem = new SlimefunItem(RU_GEMS, Moonstone, RecipeType.NULL, moonstoneRecipe);
@@ -485,9 +485,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Onyx = new SlimefunItemStack(
                 "ONYX", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmUwY2JjMThhYTgzODk2Zjk4NGI1MmIyMWU1MmYyN2ViOGE3MmUyNmM0NzE3OWZkNzkzMjk3ZjNiN2M2ZmJiZSJ9fX0=", // Material (example, change as needed)
-                "&8Onyx", // Display name
-                "&7A dark, glossy gemstone", // Description
-                "&7Known for its protective properties" // Additional lore
+                "&8缟玛瑙", // Display name
+                "&7一种黑色光滑的宝石", // Description
+                "&7因其保佑的特性而闻名" // Additional lore
         );
         ItemStack[] onyxRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem onyxItem = new SlimefunItem(RU_GEMS, Onyx, RecipeType.NULL, onyxRecipe);
@@ -495,9 +495,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Rhodonite = new SlimefunItemStack(
                 "RHODONITE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzA2N2ZjM2U4MWQ2NDU5MmY3NTEzYWVlYTc3M2U2MTYzNDMzYmY0MTg3YzRiZjcyYTc5MDM4Y2ZjNWVkYzE1ZCJ9fX0=", // Material (example, change as needed)
-                "&dRhodonite", // Display name
-                "&7A pink gemstone with black veins", // Description
-                "&7Believed to promote love and emotional healing" // Additional lore
+                "&d蔷薇辉石", // Display name
+                "&7一种带有黑色纹理的粉色宝石", // Description
+                "&7被认为能促进爱情和情感愈合" // Additional lore
         );
         ItemStack[] rhodoniteRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem rhodoniteItem = new SlimefunItem(RU_GEMS, Rhodonite, RecipeType.NULL, rhodoniteRecipe);
@@ -505,9 +505,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Amethyst = new SlimefunItemStack(
                 "AMETHYST", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzFkN2VlZjMzNzE1MzUxY2Y3MjJlYTM2M2FhOTkxNGExNmQ2NDExODFmNjc0ZGQ1OTJhODM2OGUyMWQ0M2I2YiJ9fX0=", // Material (example, change as needed)
-                "&5Amethyst", // Display name
-                "&7A purple gemstone with a soothing energy", // Description
-                "&7Associated with clarity and intuition" // Additional lore
+                "&5紫水晶", // Display name
+                "&7一种紫色宝石，具有舒缓的能量", // Description
+                "&7与清晰和直觉相关联" // Additional lore
         );
         ItemStack[] amethystRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem amethystItem = new SlimefunItem(RU_GEMS, Amethyst, RecipeType.NULL, amethystRecipe);
@@ -515,9 +515,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Tanzanite = new SlimefunItemStack(
                 "TANZANITE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWY4ZDYzZTkwN2JkZmYyNTJhMDRlMGVhZWM5OGI1MmE4Nzk1OGQ3MzdkOGU0OGQ0MzE5ZmE1OTFjMzFkMGUzMSJ9fX0=", // Material (example, change as needed)
-                "&bTanzanite", // Display name
-                "&7A rare blue-violet gemstone", // Description
-                "&7Found only in Tanzania" // Additional lore
+                "&b坦桑石", // Display name
+                "&7一种罕见的蓝紫色宝石", // Description
+                "&7仅能在坦桑尼亚发现" // Additional lore
         );
         ItemStack[] tanzaniteRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem tanzaniteItem = new SlimefunItem(RU_GEMS, Tanzanite, RecipeType.NULL, tanzaniteRecipe);
@@ -525,9 +525,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Sapphire = new SlimefunItemStack(
                 "SAPPHIRE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzllZjMzYTNlNzUzY2JhMjliNmMxMzRhMWJkNjc0MzhmNmQ2NjlmNmM0Yzc1NjI5MmNjMjBjMzEyMDkxMDUyOCJ9fX0=", // Material (example, change as needed)
-                "&9Sapphire", // Display name
-                "&7A precious blue gemstone", // Description
-                "&7Associated with wisdom and royalty" // Additional lore
+                "&9蓝宝石", // Display name
+                "&7一颗珍贵的蓝色宝石", // Description
+                "&7与智慧和王权相关联" // Additional lore
         );
         ItemStack[] sapphireRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem sapphireItem = new SlimefunItem(RU_GEMS, Sapphire, RecipeType.NULL, sapphireRecipe);
@@ -535,9 +535,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Kyanite = new SlimefunItemStack(
                 "KYANITE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTkxZWE0N2QwYTkxMmYwMjc2ODUyOGE4M2FlZTNmZTU3OTE3ODMyODgwOThiOTBlOWMwOGExZTBmN2VlNjY3OSJ9fX0=", // Material (example, change as needed)
-                "&3Kyanite", // Display name
-                "&7A blue mineral often used in jewelry", // Description
-                "&7Known for its calming and balancing properties" // Additional lore
+                "&3蓝晶石", // Display name
+                "&7一种蓝色矿物，常用于珠宝", // Description
+                "&7因其镇静和平衡的特性而闻名" // Additional lore
         );
         ItemStack[] kyaniteRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem kyaniteItem = new SlimefunItem(RU_GEMS, Kyanite, RecipeType.NULL, kyaniteRecipe);
@@ -545,9 +545,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Turquoise = new SlimefunItemStack(
                 "TURQUOISE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhlYWNkYjA2OTRlZTEwYmEwYTk4NjZlZTQ5NTA5MDJmNGEzZGVkZTA3ODIwMWRlMDU3NjJkM2ZkZjI2M2NlMSJ9fX0=", // Material (example, change as needed)
-                "&bTurquoise", // Display name
-                "&7A blue-green gemstone prized for its color", // Description
-                "&7Believed to bring protection and good fortune" // Additional lore
+                "&b绿松石", // Display name
+                "&7因其颜色而珍贵的蓝绿色宝石", // Description
+                "&7被认为能带来保护和好运" // Additional lore
         );
         ItemStack[] turquoiseRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem turquoiseItem = new SlimefunItem(RU_GEMS, Turquoise, RecipeType.NULL, turquoiseRecipe);
@@ -555,9 +555,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Emerald = new SlimefunItemStack(
                 "EMERALD", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjczNTRiODc4ODQzYzcxZWE1MzA2ZmViM2RjOGI3NjdmNzY4Y2U2MDM5ZmEwZTViYjZmMjNhZDk4ZGFmNmM2ZiJ9fX0=", // Material (example, change as needed)
-                "&aEmerald", // Display name
-                "&7A rare green gemstone", // Description
-                "&7Valued for its beauty and rarity" // Additional lore
+                "&a祖母绿", // Display name
+                "&7一种罕见的绿色宝石", // Description
+                "&7因其美丽和稀有而闻名" // Additional lore
         );
         ItemStack[] emeraldRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem emeraldItem = new SlimefunItem(RU_GEMS, Emerald, RecipeType.NULL, emeraldRecipe);
@@ -565,9 +565,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Peridot = new SlimefunItemStack(
                 "PERIDOT", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWUxZDRlOWNlMWYxNjg0Nzg2OTI3ZTEwZjU5Zjk2ZDNhNTZjNzkyZThhOWIzYzVjNmE3NDU2OGU1Mjk3YjU2NSJ9fX0=", // Material (example, change as needed)
-                "&aPeridot", // Display name
-                "&7A green gemstone often found in volcanic areas", // Description
-                "&7Symbolizes strength and protection" // Additional lore
+                "&a橄榄石", // Display name
+                "&7一种绿色宝石，通常在火山地区发现", // Description
+                "&7象征着力量和保护" // Additional lore
         );
         ItemStack[] peridotRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem peridotItem = new SlimefunItem(RU_GEMS, Peridot, RecipeType.NULL, peridotRecipe);
@@ -575,9 +575,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Topaz = new SlimefunItemStack(
                 "TOPAZ", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTU2NTJmMzcxNmQzOGQ4OTkxZTI4N2E4Y2JmN2YwNmU5ODI3OWE1MWFmODAwNTAzMDE4YmVjNzI1NDJkNjBjMyJ9fX0=", // Material (example, change as needed)
-                "&eTopaz", // Display name
-                "&7A yellow gemstone associated with positivity", // Description
-                "&7Thought to promote creativity and happiness" // Additional lore
+                "&e黄玉", // Display name
+                "&7一种与积极相关的黄色宝石", // Description
+                "&7象征着创造力和快乐" // Additional lore
         );
         ItemStack[] topazRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem topazItem = new SlimefunItem(RU_GEMS, Topaz, RecipeType.NULL, topazRecipe);
@@ -585,9 +585,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Citrine = new SlimefunItemStack(
                 "CITRINE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFjNzIxMjhmMDcxMmFiYzM1ODgyNjg1ZjVkMDgxZTQ2YTRhZjNhYWJjNTMyYjMzNTQyODMwODBkZWU1OTA1ZCJ9fX0=", // Material (example, change as needed)
-                "&6Citrine", // Display name
-                "&7A yellow-orange gemstone associated with abundance", // Description
-                "&7Believed to attract wealth and success" // Additional lore
+                "&6黄水晶", // Display name
+                "&7一种与富足联系在一起的橙黄色宝石", // Description
+                "&7被认为能吸引财富和成功" // Additional lore
         );
         ItemStack[] citrineRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem citrineItem = new SlimefunItem(RU_GEMS, Citrine, RecipeType.NULL, citrineRecipe);
@@ -595,9 +595,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack Garnet = new SlimefunItemStack(
                 "GARNET", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzcxZDcwOTY5NWJlNWM3ZTQ0ZDAyZTg2NDE2M2I2MTg1YzE0YmM5YjdiOGNiNWM0ODMwOWQzNjE3NWIxYjc1OCJ9fX0=", // Material (example, change as needed)
-                "&cGarnet", // Display name
-                "&7A deep red gemstone symbolizing love and passion", // Description
-                "&7Associated with strength and energy" // Additional lore
+                "&c石榴石", // Display name
+                "&7象征爱情和激情的深红色宝石", // Description
+                "&7与力量和能量有关" // Additional lore
         );
         ItemStack[] garnetRecipe = {null, null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem garnetItem = new SlimefunItem(RU_GEMS, Garnet, RecipeType.NULL, garnetRecipe);
@@ -609,9 +609,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack JadeCluster = new SlimefunItemStack(
                 "JADE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTEzMGU5YzRjZjY4NWE4MDU2NjNkZmY4YTNiNDMwNGFkMGE3MThmNzBhMWRjOGQwZGFlYzFlNTJhOGEzOGNiYSJ9fX0=", // Material (example, change as needed)
-                "&aJade Cluster", // Display name
-                "&7A cluster of beautiful green gemstones", // Description
-                "&7Found deep in the earth" // Additional lore
+                "&a玉簇", // Display name
+                "&7一颗漂亮的绿色宝石", // Description
+                "&7可在地球深处发现" // Additional lore
         );
         ItemStack[] jadeClusterRecipe = {new CustomItemStack(Jade, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem jadeClusterItem = new SlimefunItem(RU_GEMS, JadeCluster, RecipeType.COMPRESSOR, jadeClusterRecipe);
@@ -619,9 +619,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack MoonstoneCluster = new SlimefunItemStack(
                 "MOONSTONE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODY4MGM2OTU0MDZlZWY0ZTA2ZWNmYzBkODg0ODhmNWZhMWY1ZDljYzRlNTg3NzJiZGQwMTg1NzZkZTU5MzBlMiJ9fX0=", // Material (example, change as needed)
-                "&7Moonstone Cluster", // Display name
-                "&fA cluster of mystical gemstones from the moon", // Description
-                "&7Said to possess powerful magical properties" // Additional lore
+                "&7月光石簇", // Display name
+                "&f来自月球的神秘宝石", // Description
+                "&7据说拥有神奇的特性" // Additional lore
         );
         ItemStack[] moonstoneClusterRecipe = {new CustomItemStack(Moonstone, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem moonstoneClusterItem = new SlimefunItem(RU_GEMS, MoonstoneCluster, RecipeType.COMPRESSOR, moonstoneClusterRecipe);
@@ -629,9 +629,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack OnyxCluster = new SlimefunItemStack(
                 "ONYX_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWVlNDQ0NDIyNjM5NTI3NzQzMjQ5ZDg2YzdmMTk0ZGQ2MDFiMzI0YzUzOGIxYzQxNmQ3ZjIzMzFiMWEzNzBmYiJ9fX0=", // Material (example, change as needed)
-                "&8Onyx Cluster", // Display name
-                "&7A cluster of dark, glossy gemstones", // Description
-                "&7Known for their combined protective properties" // Additional lore
+                "&8缟玛瑙簇", // Display name
+                "&7一种黑色光滑的宝石", // Description
+                "&7因其保佑的特性而闻名" // Additional lore
         );
         ItemStack[] onyxClusterRecipe = {new CustomItemStack(Onyx, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem onyxClusterItem = new SlimefunItem(RU_GEMS, OnyxCluster, RecipeType.COMPRESSOR, onyxClusterRecipe);
@@ -639,9 +639,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack RhodoniteCluster = new SlimefunItemStack(
                 "RHODONITE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODUxNjhhMjA2ZDU3NzE3MmI5ZjZhZTk0OWM2YjFhZjM2ZWI5M2U1Mzk3ZmYyNDRkY2ZkZGJkNTljNDBmYzJlZCJ9fX0=", // Material (example, change as needed)
-                "&dRhodonite Cluster", // Display name
-                "&7A cluster of pink gemstones with black veins", // Description
-                "&7Believed to amplify the properties of individual stones" // Additional lore
+                "&d蔷薇辉石簇", // Display name
+                "&7一种带有黑色纹理的粉色宝石", // Description
+                "&7被认为能促进爱情和情感愈合" // Additional lore
         );
         ItemStack[] rhodoniteClusterRecipe = {new CustomItemStack(Rhodonite, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem rhodoniteClusterItem = new SlimefunItem(RU_GEMS, RhodoniteCluster, RecipeType.COMPRESSOR, rhodoniteClusterRecipe);
@@ -649,9 +649,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack AmethystCluster = new SlimefunItemStack(
                 "AMETHYST_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZiYzU4ZGQ1ZDhhMDNkNTZhY2VkNGQwNDRhYTM5ZGM4MTU0OTZkNWViNDc0Y2JjZWYyNjk4NGFmNDkzOTFkIn19fQ==", // Material (example, change as needed)
-                "&5Amethyst Cluster", // Display name
-                "&7A cluster of purple gemstones emitting a soothing energy", // Description
-                "&7Known for their collective calming effect" // Additional lore
+                "&5紫水晶簇", // Display name
+                "&7一种紫色宝石，具有舒缓的能量", // Description
+                "&7与清晰和直觉相关联" // Additional lore
         );
         ItemStack[] amethystClusterRecipe = {new CustomItemStack(Amethyst, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem amethystClusterItem = new SlimefunItem(RU_GEMS, AmethystCluster, RecipeType.COMPRESSOR, amethystClusterRecipe);
@@ -659,9 +659,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TanzaniteCluster = new SlimefunItemStack(
                 "TANZANITE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdjZTk1N2Q4NDU3ZjhlMTAyYjhmOTJlOWE2ZDU2NDRhNWE5OWU3MDU3ZjQxOTY1ZjYxOTJiNTcyYzk3NGJhNyJ9fX0=", // Material (example, change as needed)
-                "&bTanzanite Cluster", // Display name
-                "&7A cluster of rare blue-violet gemstones", // Description
-                "&7Said to enhance spiritual awareness when grouped" // Additional lore
+                "&b坦桑石簇", // Display name
+                "&7一种罕见的蓝紫色宝石", // Description
+                "&7仅能在坦桑尼亚发现" // Additional lore
         );
         ItemStack[] tanzaniteClusterRecipe = {new CustomItemStack(Tanzanite, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem tanzaniteClusterItem = new SlimefunItem(RU_GEMS, TanzaniteCluster, RecipeType.COMPRESSOR, tanzaniteClusterRecipe);
@@ -669,9 +669,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack SapphireCluster = new SlimefunItemStack(
                 "SAPPHIRE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTVjNTE1ZGY3Zjc4MzFjZjkwMmY4OTAwOTFlNjUyNjk2OWVlYzM2NDBlZGM2ZThhNDRiYTZjNDA1YTkxNmQxMCJ9fX0=", // Material (example, change as needed)
-                "&9Sapphire Cluster", // Display name
-                "&7A cluster of precious blue gemstones", // Description
-                "&7Known for their collective wisdom and royalty" // Additional lore
+                "&9蓝宝石簇", // Display name
+                "&7一颗珍贵的蓝色宝石", // Description
+                "&7与智慧和王权相关联" // Additional lore
         );
         ItemStack[] sapphireClusterRecipe = {new CustomItemStack(Sapphire, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem sapphireClusterItem = new SlimefunItem(RU_GEMS, SapphireCluster, RecipeType.COMPRESSOR, sapphireClusterRecipe);
@@ -679,9 +679,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack KyaniteCluster = new SlimefunItemStack(
                 "KYANITE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q0MTU3ZWNjY2ZiYjhhNGM4YzkzYjZkZTIwNTJiOTgxNDA2M2RhMWZlNzQ2YWZjMTlkMGUyNzUyYzgyMWJlOCJ9fX0=", // Material (example, change as needed)
-                "&3Kyanite Cluster", // Display name
-                "&7A cluster of blue minerals often used in jewelry", // Description
-                "&7Known for their combined calming and balancing properties" // Additional lore
+                "&3蓝晶石簇", // Display name
+                "&7一种蓝色矿物，常用于珠宝", // Description
+                "&7因其镇静和平衡的特性而闻名" // Additional lore
         );
         ItemStack[] kyaniteClusterRecipe = {new CustomItemStack(Kyanite, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem kyaniteClusterItem = new SlimefunItem(RU_GEMS, KyaniteCluster, RecipeType.COMPRESSOR, kyaniteClusterRecipe);
@@ -689,9 +689,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TurquoiseCluster = new SlimefunItemStack(
                 "TURQUOISE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTliMzY4MWI4ZTdiNjBmMmJlMWEyNzYxNGQ3M2NkODczMmQwMWI5MmE2YjRjYTA1ZjZjZmVhY2RlMDExZTZkNSJ9fX0=", // Material (example, change as needed)
-                "&bTurquoise Cluster", // Display name
-                "&7A cluster of blue-green gemstones prized for their color", // Description
-                "&7Believed to amplify protection and good fortune when clustered" // Additional lore
+                "&b绿松石簇", // Display name
+                "&7因其颜色而珍贵的蓝绿色宝石", // Description
+                "&7被认为能带来保护和好运" // Additional lore
         );
         ItemStack[] turquoiseClusterRecipe = {new CustomItemStack(Turquoise, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem turquoiseClusterItem = new SlimefunItem(RU_GEMS, TurquoiseCluster, RecipeType.COMPRESSOR, turquoiseClusterRecipe);
@@ -699,9 +699,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack EmeraldCluster = new SlimefunItemStack(
                 "EMERALD_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE5NWI0NTQ2ODA1NWJiMDIwZWY3NzZiNzE3OGU3OTFhZGFiNTEwNWFmYzI5ODgzOGVmY2QzMGY0ODViZDJjMyJ9fX0=", // Material (example, change as needed)
-                "&aEmerald Cluster", // Display name
-                "&7A cluster of rare green gemstones", // Description
-                "&7Valued for their collective beauty and rarity" // Additional lore
+                "&a祖母绿簇", // Display name
+                "&7一种罕见的绿色宝石", // Description
+                "&7因其美丽和稀有而闻名" // Additional lore
         );
         ItemStack[] emeraldClusterRecipe = {new CustomItemStack(Emerald, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem emeraldClusterItem = new SlimefunItem(RU_GEMS, EmeraldCluster, RecipeType.COMPRESSOR, emeraldClusterRecipe);
@@ -709,9 +709,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack PeridotCluster = new SlimefunItemStack(
                 "PERIDOT_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQwNWE0ZTQ1OTk5ODY1MThkNDhlYjZlMGIwZDI2N2IzNmQ0MTNhZjQ1NjVhM2YzZDA4ZTEyMmJjMjFlNGUxNCJ9fX0=", // Material (example, change as needed)
-                "&aPeridot Cluster", // Display name
-                "&7A cluster of green gemstones often found in volcanic areas", // Description
-                "&7Symbolizes collective strength and protection" // Additional lore
+                "&a橄榄石簇", // Display name
+                "&7一种绿色宝石，通常在火山地区发现", // Description
+                "&7象征着力量和保护" // Additional lore
         );
         ItemStack[] peridotClusterRecipe = {new CustomItemStack(Peridot, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem peridotClusterItem = new SlimefunItem(RU_GEMS, PeridotCluster, RecipeType.COMPRESSOR, peridotClusterRecipe);
@@ -719,9 +719,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TopazCluster = new SlimefunItemStack(
                 "TOPAZ_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFhOWZiZWE3M2YzYzZkZTExYmU2ZWE0YjM1Y2NlYTY1OTZkZTBiNDY4MmI0ZmE1YjFmYjM4NTZjMjU0YjYyMiJ9fX0=", // Material (example, change as needed)
-                "&eTopaz Cluster", // Display name
-                "&7A cluster of yellow gemstones associated with positivity", // Description
-                "&7Known for enhancing creativity and happiness when grouped" // Additional lore
+                "&e黄玉簇", // Display name
+                "&7一种与积极相关的黄色宝石", // Description
+                "&7象征着创造力和快乐" // Additional lore
         );
         ItemStack[] topazClusterRecipe = {new CustomItemStack(Topaz, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem topazClusterItem = new SlimefunItem(RU_GEMS, TopazCluster, RecipeType.COMPRESSOR, topazClusterRecipe);
@@ -729,9 +729,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack CitrineCluster = new SlimefunItemStack(
                 "CITRINE_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFhNmQwOTQxMThiODY2NTRmYjlkMTU5OWQyMjc2MjhhNzFjY2Q3NDE3ZWFmNTUwYTY3OGM1NWRhYzY0OTJkZiJ9fX0=", // Material (example, change as needed)
-                "&6Citrine Cluster", // Display name
-                "&7A cluster of yellow-orange gemstones associated with abundance", // Description
-                "&7Believed to attract wealth and success when clustered" // Additional lore
+                "&6黄水晶簇", // Display name
+                "&7一种与富足联系在一起的橙黄色宝石", // Description
+                "&7被认为能吸引财富和成功" // Additional lore
         );
         ItemStack[] citrineClusterRecipe = {new CustomItemStack(Citrine, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem citrineClusterItem = new SlimefunItem(RU_GEMS, CitrineCluster, RecipeType.COMPRESSOR, citrineClusterRecipe);
@@ -739,9 +739,9 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack GarnetCluster = new SlimefunItemStack(
                 "GARNET_CLUSTER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIyODYzMjRiNmIwNmMyZDRjMWQ4ZjgzYTliMTQwZDdjYWJkODI4MWRiOTcyYjI0M2QyZTYyZDFhMjNkMDA1NCJ9fX0=", // Material (example, change as needed)
-                "&cGarnet Cluster", // Display name
-                "&7A cluster of deep red gemstones symbolizing love and passion", // Description
-                "&7Known for their collective strength and energy" // Additional lore
+                "&c石榴石簇", // Display name
+                "&7象征爱情和激情的深红色宝石", // Description
+                "&7与力量和能量有关" // Additional lore
         );
         ItemStack[] garnetClusterRecipe = {new CustomItemStack(Garnet, 8), null, null, null, null, null, null, null, null}; // Recipe ingredients, change as needed
         SlimefunItem garnetClusterItem = new SlimefunItem(RU_GEMS, GarnetCluster, RecipeType.COMPRESSOR, garnetClusterRecipe);
@@ -753,15 +753,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack JadeCrystal = new SlimefunItemStack(
                 "JADE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzM1NTAwYTM0OGIwMDY1MWU3ZmY1MWRiOTJhYmI2NDdhNmNjZTM3MzM5N2M0MWFhZmNiZDQwNGNhZjhmY2JmNiJ9fX0=", // Material (example, change as needed)
-                "&aJade Crystal", // Display name
-                "&7A refined beautiful green gemstone", // Description
-                "&7Found deep in the earth" // Additional lore
+                "&a玉水晶", // Display name
+                "&7一颗漂亮的绿色宝石", // Description
+                "&7可在地球深处发现" // Additional lore
         );
         ItemMeta JCMeta = JadeCrystal.getItemMeta();
 // Add Jade Crystal lore
         List<String> JClore = new ArrayList<>(JCMeta.getLore());
         JClore.add("");
-        JClore.add("It's shining");
+        JClore.add("它在闪闪发光");
 // Update the lore
         JCMeta.setLore(JClore);
         JadeCrystal.setItemMeta(JCMeta);
@@ -771,15 +771,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack MoonstoneCrystal = new SlimefunItemStack(
                 "MOONSTONE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhkYzIyZjZhZjUyOTQ5MTBiMmRiZjFjNzRkMDUwYWY3ZTVhY2ZiZDZhYWMwNjE0YzY5ZDYxNTJjMzFiZGY3OSJ9fX0=", // Material (example, change as needed)
-                "&7Moonstone Crystal", // Display name
-                "&fA refined mystical gemstone from the moon", // Description
-                "&7Said to possess powerful magical properties" // Additional lore
+                "&7月光石水晶", // Display name
+                "&f来自月球的神秘宝石", // Description
+                "&7据说拥有神奇的特性" // Additional lore
         );
         ItemMeta MCMeta = MoonstoneCrystal.getItemMeta();
 // Add Moonstone Crystal lore
         List<String> MClore = new ArrayList<>(MCMeta.getLore());
         MClore.add("");
-        MClore.add("It's shining");
+        MClore.add("它在闪闪发光");
 // Update the lore
         MCMeta.setLore(MClore);
         MoonstoneCrystal.setItemMeta(MCMeta);
@@ -789,15 +789,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack OnyxCrystal = new SlimefunItemStack(
                 "ONYX_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY3MGE5ODk5N2I1ZGE2MDYyZjM1MTliMWZiZDBiZWQ3NzBjZjA3YzlmNjA4M2IzYWYxZTM3OWY5NTQ5M2I1OSJ9fX0=", // Material (example, change as needed)
-                "&8Onyx Crystal", // Display name
-                "&7A refined dark, glossy gemstone", // Description
-                "&7Known for its enhanced protective properties" // Additional lore
+                "&8缟玛瑙水晶", // Display name
+                "&7一种黑色光滑的宝石", // Description
+                "&7因其保佑的特性而闻名" // Additional lore
         );
         ItemMeta OCMeta = OnyxCrystal.getItemMeta();
 // Add Onyx Crystal lore
         List<String> OClore = new ArrayList<>(OCMeta.getLore());
         OClore.add("");
-        OClore.add("It's shining");
+        OClore.add("它在闪闪发光");
 // Update the lore
         OCMeta.setLore(OClore);
         OnyxCrystal.setItemMeta(OCMeta);
@@ -807,15 +807,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack RhodoniteCrystal = new SlimefunItemStack(
                 "RHODONITE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQxNTQxNDdhOWVlNWMwYTEwZmM0Y2I5OGNlODA2MzFiNGQyNjhlYjMwODgzMGM3NWEwODQzNDhjNmY0OTg0ZCJ9fX0=", // Material (example, change as needed)
-                "&dRhodonite Crystal", // Display name
-                "&7A refined pink gemstone with black veins", // Description
-                "&7Believed to possess heightened properties for promoting love and emotional healing" // Additional lore
+                "&d蔷薇辉石水晶", // Display name
+                "&7一种带有黑色纹理的粉色宝石", // Description
+                "&7被认为能促进爱情和情感愈合" // Additional lore
         );
         ItemMeta RCMeta = RhodoniteCrystal.getItemMeta();
 // Add Rhodonite Crystal lore
         List<String> RClore = new ArrayList<>(RCMeta.getLore());
         RClore.add("");
-        RClore.add("It's shining");
+        RClore.add("它在闪闪发光");
 // Update the lore
         RCMeta.setLore(RClore);
         RhodoniteCrystal.setItemMeta(RCMeta);
@@ -825,15 +825,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack AmethystCrystal = new SlimefunItemStack(
                 "AMETHYST_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjljODk5YzE0MzhjNGY4MTkyYTVjN2U2Yjc1OGZhYmE4ZmRkNTQ2MDRlZDg5YmY2MjI3YjZmY2MyYzc1YTQyMyJ9fX0=", // Material (example, change as needed)
-                "&5Amethyst Crystal", // Display name
-                "&7A refined purple gemstone with a soothing energy", // Description
-                "&7Enhanced with clarity and intuition properties" // Additional lore
+                "&5纯紫水晶", // Display name
+                "&7一种紫色宝石，具有舒缓的能量", // Description
+                "&7与清晰和直觉相关联" // Additional lore
         );
         ItemMeta ACMeta = AmethystCrystal.getItemMeta();
 // Add Amethyst Crystal lore
         List<String> AClore = new ArrayList<>(ACMeta.getLore());
         AClore.add("");
-        AClore.add("It's shining");
+        AClore.add("它在闪闪发光");
 // Update the lore
         ACMeta.setLore(AClore);
         AmethystCrystal.setItemMeta(ACMeta);
@@ -843,15 +843,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TanzaniteCrystal = new SlimefunItemStack(
                 "TANZANITE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Y0MzFlOWM3Y2IwNTFhMDFlNmFhYjNmM2QwZGFjODczNmNhOGVhZjE1ZjY1NTQwY2ZhNzk5NWExZTI0MWY1NSJ9fX0=", // Material (example, change as needed)
-                "&bTanzanite Crystal", // Display name
-                "&7A rare refined blue-violet gemstone", // Description
-                "&7Enhanced with mystical properties" // Additional lore
+                "&b坦桑石水晶", // Display name
+                "&7一种罕见的蓝紫色宝石", // Description
+                "&7仅能在坦桑尼亚发现" // Additional lore
         );
         ItemMeta TCMeta = TanzaniteCrystal.getItemMeta();
 // Add Tanzanite Crystal lore
         List<String> TClore = new ArrayList<>(TCMeta.getLore());
         TClore.add("");
-        TClore.add("It's shining");
+        TClore.add("它在闪闪发光");
 // Update the lore
         TCMeta.setLore(TClore);
         TanzaniteCrystal.setItemMeta(TCMeta);
@@ -861,15 +861,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack SapphireCrystal = new SlimefunItemStack(
                 "SAPPHIRE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhmOWYzY2VkNzE2Yzc5MGQ1MjQ1ZDRjZDllMmI3NjZhNTU3NjU0MmE4OGQ1YjE0NGFlMWQ3YjA0MjYwMzc4YSJ9fX0=", // Material (example, change as needed)
-                "&9Sapphire Crystal", // Display name
-                "&7A precious refined blue gemstone", // Description
-                "&7Infused with ancient wisdom and power" // Additional lore
+                "&9蓝宝石水晶", // Display name
+                "&7一颗珍贵的蓝色宝石", // Description
+                "&7与智慧和王权相关联" // Additional lore
         );
         ItemMeta SCMeta = SapphireCrystal.getItemMeta();
 // Add Sapphire Crystal lore
         List<String> SClore = new ArrayList<>(SCMeta.getLore());
         SClore.add("");
-        SClore.add("It's shining");
+        SClore.add("它在闪闪发光");
 // Update the lore
         SCMeta.setLore(SClore);
         SapphireCrystal.setItemMeta(SCMeta);
@@ -879,15 +879,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack KyaniteCrystal = new SlimefunItemStack(
                 "KYANITE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDRmYzM4MDIyZDc1YjYwMTBiNDZkYTg1MTg2MGJlN2ViMmQ0YjAzNTQ5MDU3NDdkMTIyYTUyMTBkMDE3ZDI3OCJ9fX0=", // Material (example, change as needed)
-                "&3Kyanite Crystal", // Display name
-                "&7A refined blue mineral of exceptional clarity", // Description
-                "&7Radiates tranquility and balance" // Additional lore
+                "&3蓝晶石水晶", // Display name
+                "&7一种蓝色矿物，常用于珠宝", // Description
+                "&7因其镇静和平衡的特性而闻名" // Additional lore
         );
         ItemMeta KCMeta = KyaniteCrystal.getItemMeta();
 // Add Kyanite Crystal lore
         List<String> KClore = new ArrayList<>(KCMeta.getLore());
         KClore.add("");
-        KClore.add("It's shining");
+        KClore.add("它在闪闪发光");
 // Update the lore
         KCMeta.setLore(KClore);
         KyaniteCrystal.setItemMeta(KCMeta);
@@ -897,15 +897,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TurquoiseCrystal = new SlimefunItemStack(
                 "TURQUOISE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZhOWE2Y2NiOTZiYWMwZDAyMGQyODQ2MTQ5YTFiZjg5OGM2MTgzMTQ0MjZhNTA4Y2M2YzY1YTRlNTc2OTVmNiJ9fX0=", // Material (example, change as needed)
-                "&bTurquoise Crystal", // Display name
-                "&7A refined blue-green gemstone prized for its color", // Description
-                "&7Brings protection and good fortune to its bearer" // Additional lore
+                "&b绿松石水晶", // Display name
+                "&7因其颜色而珍贵的蓝绿色宝石", // Description
+                "&7被认为能带来保护和好运" // Additional lore
         );
         ItemMeta TqCMeta = TurquoiseCrystal.getItemMeta();
 // Add Turquoise Crystal lore
         List<String> TqClore = new ArrayList<>(TqCMeta.getLore());
         TqClore.add("");
-        TqClore.add("It's shining");
+        TqClore.add("它在闪闪发光");
 // Update the lore
         TqCMeta.setLore(TqClore);
         TurquoiseCrystal.setItemMeta(TqCMeta);
@@ -915,15 +915,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack EmeraldCrystal = new SlimefunItemStack(
                 "EMERALD_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI0ZTNmNjc4ZGI5OWVmOGVmODYwNWU5NjdkYmNhZDBlODNiYzJlM2M1NDIyMTQxNDliZDEzMTYzMmE3MjE1YSJ9fX0=", // Material (example, change as needed)
-                "&aEmerald Crystal", // Display name
-                "&7A refined rare green gemstone valued for its beauty and rarity", // Description
-                "&7Brings prosperity and harmony to its possessor" // Additional lore
+                "&a祖母绿水晶", // Display name
+                "&7一种罕见的绿色宝石", // Description
+                "&7因其美丽和稀有而闻名" // Additional lore
         );
         ItemMeta ECMeta = EmeraldCrystal.getItemMeta();
 // Add Emerald Crystal lore
         List<String> ECllore = new ArrayList<>(ECMeta.getLore());
         ECllore.add("");
-        ECllore.add("It's shining");
+        ECllore.add("它在闪闪发光");
 // Update the lore
         ECMeta.setLore(ECllore);
         EmeraldCrystal.setItemMeta(ECMeta);
@@ -933,15 +933,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack PeridotCrystal = new SlimefunItemStack(
                 "PERIDOT_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTMzNzBjYzkzZTYzZGU3MzljMTcyNzZiNzY3ZDBhNDAyYjM5NDFmM2ExZDBjZGFmN2M5NzM1MzhhYWMzNjM4MiJ9fX0=", // Material (example, change as needed)
-                "&aPeridot Crystal", // Display name
-                "&7A refined green gemstone often found in volcanic areas", // Description
-                "&7Symbolizes strength and protection, brings luck and prosperity" // Additional lore
+                "&a橄榄石水晶", // Display name
+                "&7一种绿色宝石，通常在火山地区发现", // Description
+                "&7象征着力量和保护" // Additional lore
         );
         ItemMeta PCMeta = PeridotCrystal.getItemMeta();
 // Add Peridot Crystal lore
         List<String> PCllore = new ArrayList<>(PCMeta.getLore());
         PCllore.add("");
-        PCllore.add("It's shining");
+        PCllore.add("它在闪闪发光");
 // Update the lore
         PCMeta.setLore(PCllore);
         PeridotCrystal.setItemMeta(PCMeta);
@@ -951,15 +951,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack TopazCrystal = new SlimefunItemStack(
                 "TOPAZ_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTA2ODYyZjE1NGVjODliYWZjMjE0ZDQ0MmJkOGNmMzYwZmFmZjNlNTg2MDMzMDdiMTE4YTE2Mjc2NzI2OGE2In19fQ==", // Material (example, change as needed)
-                "&eTopaz Crystal", // Display name
-                "&7A refined yellow gemstone associated with positivity", // Description
-                "&7Thought to promote creativity and happiness" // Additional lore
+                "&e黄玉水晶", // Display name
+                "&7一种与积极相关的黄色宝石", // Description
+                "&7象征着创造力和快乐" // Additional lore
         );
         ItemMeta TpCMeta = TopazCrystal.getItemMeta();
 // Add Topaz Crystal lore
         List<String> TpClore = new ArrayList<>(TpCMeta.getLore());
         TpClore.add("");
-        TpClore.add("It's shining");
+        TpClore.add("它在闪闪发光");
 // Update the lore
         TpCMeta.setLore(TpClore);
         TopazCrystal.setItemMeta(TpCMeta);
@@ -969,15 +969,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack CitrineCrystal = new SlimefunItemStack(
                 "CITRINE_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThhNjRjOGZhZjU1MzFjYjM2ZGEzMDMxMzhiYTc4MTM5ZDE3YzllMzUyM2UxNTZjNzFkMGY2OWRiM2Y1MjljYiJ9fX0=", // Material (example, change as needed)
-                "&6Citrine Crystal", // Display name
-                "&7A refined yellow-orange gemstone associated with abundance", // Description
-                "&7Believed to attract wealth and success" // Additional lore
+                "&6纯黄水晶", // Display name
+                "&7一种与富足联系在一起的橙黄色宝石", // Description
+                "&7被认为能吸引财富和成功" // Additional lore
         );
         ItemMeta CCMeta = CitrineCrystal.getItemMeta();
 // Add Citrine Crystal lore
         List<String> CClore = new ArrayList<>(CCMeta.getLore());
         CClore.add("");
-        CClore.add("It's shining");
+        CClore.add("它在闪闪发光");
 // Update the lore
         CCMeta.setLore(CClore);
         CitrineCrystal.setItemMeta(CCMeta);
@@ -987,15 +987,15 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack GarnetCrystal = new SlimefunItemStack(
                 "GARNET_CRYSTAL", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2I4MTIxMTZiZmY0ZGNkYzdjZDg1ZDY3Nzk5NzRjZWU3YTM2ODA0NjFmYmZlZGQ1ZTk3MWE4ZmI2MTJlZmFkIn19fQ==", // Material (example, change as needed)
-                "&cGarnet Crystal", // Display name
-                "&7A refined deep red gemstone symbolizing love and passion", // Description
-                "&7Associated with strength and energy" // Additional lore
+                "&c石榴石水晶", // Display name
+                "&7象征爱情和激情的深红色宝石", // Description
+                "&7与力量和能量有关" // Additional lore
         );
         ItemMeta GCMeta = GarnetCrystal.getItemMeta();
 // Add Garnet Crystal lore
         List<String> GClore = new ArrayList<>(GCMeta.getLore());
         GClore.add("");
-        GClore.add("It's shining");
+        GClore.add("它在闪闪发光");
 // Update the lore
         GCMeta.setLore(GClore);
         GarnetCrystal.setItemMeta(GCMeta);
@@ -1005,8 +1005,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //----------TOOLS BELOW----------//
 
-        SlimefunItemStack EndSword = new SlimefunItemStack("END_SWORD", Material.NETHERITE_SWORD, "&5End Sword","",
-                "&e&lRight Click Ability:","&e&lDirectional Teleportation","&e&lCooldown 20 seconds", "&e&lRange: 12 Blocks");
+        SlimefunItemStack EndSword = new SlimefunItemStack("END_SWORD", Material.NETHERITE_SWORD, "&5终末之剑","",
+                "&e&l右键:","&e&l定向传送","&e&l冷却时间20秒", "&e&l范围: 12 格");
             //Enchants//
         EndSword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 5);
         EndSword.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
@@ -1018,7 +1018,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
             // Add the "End Sword Identifier" to the BSlore
             List<String> ESlore = new ArrayList<>(itemMeta.getLore());
             ESlore.add("");
-            ESlore.add("It's screaming at you");
+            ESlore.add("它在对你尖叫");
             itemMeta.setLore(ESlore);
             EndSword.setItemMeta(itemMeta);
         }
@@ -1028,8 +1028,8 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack AugmentedEndSword = new SlimefunItemStack("AUGMENTED_END_SWORD", Material.NETHERITE_SWORD, "&5Augmented End Sword","",
-                "&e&lRight Click Ability:", "&e&lDirectional Teleportation", "&e&lCooldown 5 seconds", "&e&lRange: 20 Blocks");
+        SlimefunItemStack AugmentedEndSword = new SlimefunItemStack("AUGMENTED_END_SWORD", Material.NETHERITE_SWORD, "&5强化终末之剑","",
+                "&e&l右键:","&e&l定向传送","&e&l冷却时间5秒", "&e&l范围: 20 格");
             // Enchants
         AugmentedEndSword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
         AugmentedEndSword.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
@@ -1041,7 +1041,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
             // Add the "Augmented End Sword Identifier" to the BSlore
             List<String> AESlore = new ArrayList<>(AESMeta.getLore());
             AESlore.add("");
-            AESlore.add("It's staring at you");
+            AESlore.add("它在盯着你看");
             AESMeta.setLore(AESlore);
             AugmentedEndSword.setItemMeta(AESMeta);
         }
@@ -1054,7 +1054,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack IceBlaster = new SlimefunItemStack("ICE_GUN", Material.IRON_HOE, "&bIce Blaster", "", "&e&lRight Click to Fire", "&eUses Ice as ammo","&cPierces through Shields");
+        SlimefunItemStack IceBlaster = new SlimefunItemStack("ICE_GUN", Material.IRON_HOE, "&b冰爆器", "", "&e&l右键开火", "&e用冰作弹药","&c可穿甲");
         ItemMeta IBMeta = IceBlaster.getItemMeta();
         if (IBMeta != null) {
             // Enchants
@@ -1062,7 +1062,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
             // Add the "Ice Blaster Identifier" to the BSlore
             List<String> IBlore = new ArrayList<>(IBMeta.getLore());
             IBlore.add("");
-            IBlore.add("Don't snipe me pls");
+            IBlore.add("请不要挖苦我");
             IBMeta.setLore(IBlore);
             IceBlaster.setItemMeta(IBMeta);
         }
@@ -1076,7 +1076,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack IcicleStaff = new SlimefunItemStack("ICICLE_STAFF", Material.IRON_HOE, "&bIcicle Staff", "", "&e&lRight Click to Cast", "&eUses Ice as source of energy", "&cPierces through Shields");
+        SlimefunItemStack IcicleStaff = new SlimefunItemStack("ICICLE_STAFF", Material.IRON_HOE, "&b冰柱法杖", "", "&e&l右键施法", "&e使用冰作为能源", "&c可穿甲");
         ItemMeta ISMeta = IcicleStaff.getItemMeta();
         if (ISMeta != null) {
             // Enchants
@@ -1084,7 +1084,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
             // Add the "Icicle Staff Identifier" to the BSlore
             List<String> ISlore = new ArrayList<>(ISMeta.getLore());
             ISlore.add("");
-            ISlore.add("Don't freeze me pls");
+            ISlore.add("请不要冰住我");
             ISMeta.setLore(ISlore);
             IcicleStaff.setItemMeta(ISMeta);
         }
@@ -1098,7 +1098,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack GlacialStaff = new SlimefunItemStack("GLACIAL_STAFF", Material.IRON_HOE, "&bGlacial Staff", "", "&e&lRight Click to Cast", "&eSynthesizes energy itself", "&cPierces through Shields", "&cSplash damage", "&bPortable fire extinguisher");
+        SlimefunItemStack GlacialStaff = new SlimefunItemStack("GLACIAL_STAFF", Material.IRON_HOE, "&b寒冰法杖", "", "&e&l右键施法", "&e自身合成能量", "&c可穿甲", "&c溅射伤害", "&b可使周围的火熄灭");
         ItemMeta GSmeta = GlacialStaff.getItemMeta();
         if (GSmeta != null) {
             // Enchants
@@ -1107,7 +1107,7 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         }
         List<String> GSlore = new ArrayList<>(GSmeta.getLore());
         GSlore.add("");
-        GSlore.add("Run! Take cover!");
+        GSlore.add("快跑！火力覆盖！");
         if (GSmeta != null) {
             GSmeta.setLore(GSlore);
             GlacialStaff.setItemMeta(GSmeta);
@@ -1122,12 +1122,12 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
 
         //HEHE//
 
-        SlimefunItemStack BarrierSword = new SlimefunItemStack("BARRIER_SWORD", Material.IRON_SWORD, "&6Barrier Sword", "", "&e&lRight Click Ability", "&e&lInvulnerability", "&e&l15 Second Duration", "&e&lCooldown 75 Seconds");
+        SlimefunItemStack BarrierSword = new SlimefunItemStack("BARRIER_SWORD", Material.IRON_SWORD, "&6屏障剑", "", "&e&l右键释放技能", "&e&l刀枪不入", "&e&l持续时间15秒", "&e&l冷却时间75秒");
         ItemMeta BSMeta = BarrierSword.getItemMeta();
         // Add BSlore
         List<String> BSlore = new ArrayList<>(BSMeta.getLore());
         BSlore.add("");
-        BSlore.add("Basic Defensive Spell");
+        BSlore.add("基础防御咒语");
         if (BSMeta != null) {
             BSMeta.setLore(BSlore);
             BarrierSword.setItemMeta(BSMeta);
@@ -1148,14 +1148,14 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack APHEMissile = new SlimefunItemStack(
                 "APHE_MISSILE", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDg5ZGNjNTViNDhlMjcwODcyZDI4NTc2YTc5MDA1NTQwYmVkNWYwYWU1MzAxNWNmZGM5NWI3NTFkMTZmYTllMiJ9fX0=", // Material
-                "&6APHE Missile", // Display name
-                "", "&e&lRight Click to Fire", "&eATA / ATG Missile", "&cUse responsibly", "&eDoesn't break blocks, Build-Safe!" // Description/lore
+                "&6APHE导弹", // Display name
+                "", "&e&l右键开火", "&eATA / ATG导弹", "&c谨慎使用", "&e爆炸不会破坏方块，安全可靠!" // Description/lore
         );
         ItemMeta APHEMeta = APHEMissile.getItemMeta();
         // Add APHElore
         List<String> APHELore = new ArrayList<>(APHEMeta.getLore());
         APHELore.add("");
-        APHELore.add("DO NOT USE INDOORS");
+        APHELore.add("请勿在室内使用");
         if (APHEMeta != null) {
             APHEMeta.setLore(APHELore);
             APHEMissile.setItemMeta(APHEMeta);
@@ -1173,14 +1173,14 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack MissileLauncher = new SlimefunItemStack(
                 "MISSILE_LAUNCHER", // Item ID
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFiNmVlNWJiZTVhZDQyOTY4MGMxYzE1Y2Y0MjBmOTgxMWUxMTRiNzY4NTRmODk5ZjBlZjA4ZmRlMzMyNzk4YyJ9fX0=", // Material
-                "&eMissile Launcher", // Display name
-                "", "&e&lRight Click to Fire", "&eUses APHE Missiles", "&cUse responsibly", "Faster ROF than manual" // Description/lore
+                "&e导弹发射器", // Display name
+                "", "&e&l右键开火", "&e使用APHE导弹", "&c谨慎使用", "&7ROF比手动更快" // Description/lore
         );
         ItemMeta MLMeta = MissileLauncher.getItemMeta();
         // Add MLlore
         List<String> MLLore = new ArrayList<>(MLMeta.getLore());
         MLLore.add("");
-        MLLore.add("FREEEEBIRD!!!");
+        MLLore.add("自由啦!!!");
         if (MLMeta != null) {
             MLMeta.setLore(MLLore);
             MissileLauncher.setItemMeta(MLMeta);
@@ -1198,18 +1198,18 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack CrystalSniper = new SlimefunItemStack(
                 "CRYSTAL_SNIPER", // Item ID
                 Material.DIAMOND_HOE, // Material
-                "&bCrystal Sniper", // Display name
+                "&b水晶狙击枪", // Display name
                 "", // Empty lore
-                "&e&lLeft Click to Shoot", // Description
-                "&dHarness the power of crystals", // Additional lore
-                "&eVery long range", // Additional lore
-                "&e6s cooldown" // Additional lore
+                "&e&l左键射击", // Description
+                "&d利用水晶的力量", // Additional lore
+                "&e射程非常远", // Additional lore
+                "&e冷却时间6秒" // Additional lore
         );
         ItemMeta CSMeta = CrystalSniper.getItemMeta();
         if (CSMeta != null) {
             List<String> CSlore = new ArrayList<>(CSMeta.getLore());
             CSlore.add("");
-            CSlore.add("This ain't Pixel Gun!");
+            CSlore.add("这不是像素枪!");
             CSMeta.setLore(CSlore);
             CrystalSniper.setItemMeta(CSMeta);
         }
@@ -1228,11 +1228,11 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         int LPIdayEnergy = 4; // Energy generated during the day
         int LPInightEnergy = 4; // Energy generated during the night
         int LPIcapacity = 8; // Buffer capacity
-        SlimefunItemStack LunisolarPanelI = new SlimefunItemStack("LUNISOLARPANELI", Material.DAYLIGHT_DETECTOR, "&bLuni&esolar &7Panel I",
-                "", "&9Works all-day", "",
-                "&7⇒ &e⚡ &7" + LPIcapacity + "J Buffer",
-                "&7⇒ &e⚡ &7" + LPIdayEnergy + "J/s (Day)",
-                "&7⇒ &e⚡ &7" + LPInightEnergy + "J/s (Night)"); // w/ multi-line lore
+        SlimefunItemStack LunisolarPanelI = new SlimefunItemStack("LUNISOLARPANELI", Material.DAYLIGHT_DETECTOR, "&b雷米&e太阳能&7板 &cI",
+                "", "&9全天工作", "",
+                "&7⇒ &e⚡ &7" + LPIcapacity + "J 可储存",
+                "&7⇒ &e⚡ &7" + LPIdayEnergy + "J/s (昼)",
+                "&7⇒ &e⚡ &7" + LPInightEnergy + "J/s (夜)"); // w/ multi-line lore
         RecipeType LPIrecipeType = RecipeType.ENHANCED_CRAFTING_TABLE;
         ItemStack[] recipe = {
                 SlimefunItems.SOLAR_PANEL, LapisCrystal, SlimefunItems.SOLAR_PANEL,
@@ -1246,11 +1246,11 @@ public class RemiliaUtilities extends JavaPlugin implements SlimefunAddon {
         int LPIIdayEnergy = 16; // Energy generated during the day
         int LPIInightEnergy = 16; // Energy generated during the night
         int LPIIcapacity = 32; // Buffer capacity
-        SlimefunItemStack LunisolarPanelII = new SlimefunItemStack("LUNISOLARPANELII", Material.DAYLIGHT_DETECTOR, "&bLuni&esolar &7Panel II",
-                "", "&9Works all-day", "",
-                "&7⇒ &e⚡ &7" + LPIIcapacity + "J Buffer",
-                "&7⇒ &e⚡ &7" + LPIIdayEnergy + "J/s (Day)",
-                "&7⇒ &e⚡ &7" + LPIInightEnergy + "J/s (Night)"); // w/ multi-line lore
+        SlimefunItemStack LunisolarPanelII = new SlimefunItemStack("LUNISOLARPANELII", Material.DAYLIGHT_DETECTOR, "&b雷米&e太阳能&7板 &cII",
+                "", "&9全天工作", "",
+                "&7⇒ &e⚡ &7" + LPIIcapacity + "J 可储存",
+                "&7⇒ &e⚡ &7" + LPIIdayEnergy + "J/s (昼)",
+                "&7⇒ &e⚡ &7" + LPIInightEnergy + "J/s (夜)"); // w/ multi-line lore
         RecipeType LPIIrecipeType = RecipeType.ENHANCED_CRAFTING_TABLE;
         ItemStack[] LPIIRecipe = {
                 LunisolarPanelI, LapisCrystal, LunisolarPanelI,

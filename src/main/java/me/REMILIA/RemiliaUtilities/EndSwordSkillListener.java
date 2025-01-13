@@ -39,10 +39,10 @@ public class EndSwordSkillListener implements Listener {
         Player player = event.getPlayer();
         ItemStack item = event.getItem();
 
-        if (item != null && item.hasItemMeta() && item.getItemMeta().hasLore() && item.getItemMeta().getLore().contains("It's screaming at you")) {
+        if (item != null && item.hasItemMeta() && item.getItemMeta().hasLore() && item.getItemMeta().getLore().contains("它在对你尖叫")) {
             long remainingCooldown = isOnCooldown(player);
             if (remainingCooldown > 0) {
-                player.sendMessage("Skill on cooldown. Wait " + (remainingCooldown / 1000) + " seconds");
+                player.sendMessage("技能正在冷却。 请等待 " + (remainingCooldown / 1000) + " 秒");
                 return;
             }
 
@@ -58,14 +58,14 @@ public class EndSwordSkillListener implements Listener {
                 teleportPlayerForward(player);
 
             } else {
-                player.sendMessage("There are obstacles in the way.");
+                player.sendMessage("路上有障碍！");
             }
         }
     }
 
     private boolean isEndSword(ItemStack item) {
         // Check if the item has the custom lore indicating it's the End Sword
-        return item.getItemMeta().getLore().contains("It's screaming at you");
+        return item.getItemMeta().getLore().contains("它在对你尖叫");
     }
 
     private void teleportPlayerForward(Player player) {

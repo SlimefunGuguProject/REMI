@@ -44,7 +44,7 @@ public class AugmentedEndSwordSkillListener implements Listener {
         if (isAugmentedEndSword(item)) {
             long remainingCooldown = isOnCooldown(player);
             if (remainingCooldown > 0) {
-                player.sendMessage("Skill on cooldown. Wait " + (remainingCooldown / 1000) + " seconds");
+                player.sendMessage("技能正在冷却。 请等待 " + (remainingCooldown / 1000) + " 秒");
                 return;
             }
 
@@ -63,7 +63,7 @@ public class AugmentedEndSwordSkillListener implements Listener {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 60, 0));
 
             } else {
-                player.sendMessage("There are obstacles in the way.");
+                player.sendMessage("路上有障碍");
             }
         }
     }
@@ -71,7 +71,7 @@ public class AugmentedEndSwordSkillListener implements Listener {
     private boolean isAugmentedEndSword(ItemStack item) {
         // Check if the item has lore and contains the custom lore indicating it's the Augmented End Sword
         if (item != null && item.hasItemMeta() && item.getItemMeta().hasLore()) {
-            return item.getItemMeta().getLore().contains("It's staring at you");
+            return item.getItemMeta().getLore().contains("它在盯着你看");
         }
         return false;
     }

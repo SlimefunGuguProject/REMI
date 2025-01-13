@@ -45,7 +45,7 @@ public class APHEMissileListener implements Listener {
                     long remainingCooldown = cooldownDuration - timeSinceLastCast;
                     long remainingCooldownSeconds = remainingCooldown / 1000;
 
-                    player.sendMessage("The APHE Missile is on cooldown. Remaining cooldown: " + remainingCooldownSeconds + " seconds.");
+                    player.sendMessage("APHE导弹正在冷却。 剩余冷却时间: " + remainingCooldownSeconds + " 秒");
                     return;
                 }
 
@@ -99,7 +99,7 @@ public class APHEMissileListener implements Listener {
     }
 
     private boolean isValidAPHEMissile(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("DO NOT USE INDOORS");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("请勿在室内使用");
     }
 
     private Location getSpawnLocation(Player player) {
