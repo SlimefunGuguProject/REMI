@@ -5,13 +5,13 @@ name: RemiliasUtilities
 author: REMILIA
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: Adds new obscure items
+description: 添加了一些武器与工具
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
 main: me.REMILIA.RemiliaUtilities.RemiliaUtilities
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
-website: https://github.com/Slimefun/Addon-Template
+website: hhttps://github.com/SlimefunGuguProject/REMI
 
 ## This value is automatically replaced by the version specified in your pom.xml file.
 ## Do not change this.

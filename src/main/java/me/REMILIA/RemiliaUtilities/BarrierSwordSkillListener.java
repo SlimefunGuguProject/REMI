@@ -47,12 +47,12 @@ public class BarrierSwordSkillListener implements Listener {
                 // Apply invulnerability for 15 seconds
                 player.setInvulnerable(true);
                 player.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 300, 1));
-                player.sendMessage("Skill Active!");
+                player.sendMessage("技能激活!");
 
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
                     player.setInvulnerable(false);
                     player.removePotionEffect(PotionEffectType.GLOWING);
-                    player.sendMessage("Skill Inactive!");
+                    player.sendMessage("技能未激活!");
                 }, 300); // 300 ticks = 15 seconds
 
                 // Set cooldown
@@ -73,6 +73,6 @@ public class BarrierSwordSkillListener implements Listener {
     private boolean isValidBarrierSword(ItemStack item) {
         return item != null && item.getType() == Material.IRON_SWORD &&
                 item.hasItemMeta() && Objects.requireNonNull(item.getItemMeta()).hasLore() &&
-                item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("Basic Defensive Spell");
+                item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("基础防御咒语");
     }
 }

@@ -87,14 +87,14 @@ public class IceBlasterListener implements Listener {
 
                     iceProjectileTask.runTaskTimer(plugin, 0L, 1L); // Run the task every tick
                 } else {
-                    player.sendMessage("You need ice blocks to use the Ice Blaster!");
+                    player.sendMessage("你需要有冰!");
                 }
             }
         }
     }
 
     private boolean isValidIceBlaster(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("Don't snipe me pls");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("请不要挖苦我");
     }
 
     private boolean hasIceAmmo(Player player) {

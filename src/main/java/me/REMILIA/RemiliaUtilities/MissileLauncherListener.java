@@ -44,7 +44,7 @@ public class MissileLauncherListener implements Listener {
                     long remainingCooldown = cooldownDuration - timeSinceLastCast;
                     long remainingCooldownSeconds = remainingCooldown / 1000;
 
-                    player.sendMessage("Missile Launcher is on cooldown. Remaining cooldown: " + remainingCooldownSeconds + " seconds.");
+                    player.sendMessage("导弹发射器正在冷却。 剩余冷却时间: " + remainingCooldownSeconds + " 秒。");
                     return;
                 }
 
@@ -63,7 +63,7 @@ public class MissileLauncherListener implements Listener {
                     // Set cooldown
                     cooldownMap.put(player, currentTime);
                 } else {
-                    player.sendMessage("You need APHE Missiles to use the Missile Launcher!");
+                    player.sendMessage("你需要APHE导弹来使用导弹发射器!");
                 }
             }
         }
@@ -88,13 +88,13 @@ public class MissileLauncherListener implements Listener {
     }
 
     private boolean isValidMissileLauncher(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("FREEEEBIRD!!!");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("自由啦!!!");
     }
 
     private boolean hasAPHEMissile(Player player) {
         ItemStack[] inventory = player.getInventory().getContents();
         for (ItemStack itemStack : inventory) {
-            if (itemStack != null && itemStack.getItemMeta() != null && itemStack.getItemMeta().hasLore() && Objects.requireNonNull(itemStack.getItemMeta().getLore()).contains("DO NOT USE INDOORS")) {
+            if (itemStack != null && itemStack.getItemMeta() != null && itemStack.getItemMeta().hasLore() && Objects.requireNonNull(itemStack.getItemMeta().getLore()).contains("请勿在室内使用")) {
                 return true;
             }
         }
@@ -103,7 +103,7 @@ public class MissileLauncherListener implements Listener {
 
     private void consumeAPHEMissile(Player player) {
         for (ItemStack itemStack : player.getInventory().getContents()) {
-            if (itemStack != null && itemStack.getItemMeta() != null && itemStack.getItemMeta().hasLore() && Objects.requireNonNull(itemStack.getItemMeta().getLore()).contains("DO NOT USE INDOORS")) {
+            if (itemStack != null && itemStack.getItemMeta() != null && itemStack.getItemMeta().hasLore() && Objects.requireNonNull(itemStack.getItemMeta().getLore()).contains("请勿在室内使用")) {
                 int amount = itemStack.getAmount();
                 if (amount > 1) {
                     itemStack.setAmount(amount - 1);

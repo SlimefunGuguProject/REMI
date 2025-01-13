@@ -121,7 +121,7 @@ public class GlacialStaffListener implements Listener {
     }
 
     private boolean isValidGlacialStaff(ItemStack item) {
-        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("Run! Take cover!");
+        return item != null && item.getItemMeta() != null && item.getItemMeta().hasLore() && item.getItemMeta().getLore() != null && item.getItemMeta().getLore().contains("快跑！火力覆盖！");
     }
 
     private Location getSpawnLocation(Player player) {
